@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.listaappkotlin.R
 import com.example.listaappkotlin.data.models.Rutina
 
-class RutinaAdapter(private val listaRutinas:List<Rutina>) : RecyclerView.Adapter<RutinaViewHolder>() {
+class RutinaAdapter(private val listaRutinas:List<Rutina>,
+                    private val onClickListener: (Rutina) -> Unit,
+                    private val onClickDelete:(Int) -> Unit) : RecyclerView.Adapter<RutinaViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RutinaViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context);
@@ -16,7 +18,7 @@ class RutinaAdapter(private val listaRutinas:List<Rutina>) : RecyclerView.Adapte
     override fun onBindViewHolder(holder: RutinaViewHolder, position: Int
     ) {
         val item= listaRutinas[position]
-        holder.render(item)
+        holder.render(item, onClickListener, onClickDelete)
     }
 
     override fun getItemCount(): Int =
