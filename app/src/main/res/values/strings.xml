@@ -3,4 +3,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="addrutina">Añadir Rutina</string>
+    <string name="addRutina_title">Añadir rutina</string>
+    <string name="input_nombre">Ingresa el nombre</string>
+    <string name="name">Nombre:</string>
+    <string name="descp">Descripción:</string>
+    <string name="rutina_des">Descripción de la rutina</string>
+    <string name="ejercicios">Ejercicios:</string>
+    <string name="addEjercicio">Añadir ejercicio</string>
+    <string name="saveRutina">Guardar rutina</string>
 </resources>

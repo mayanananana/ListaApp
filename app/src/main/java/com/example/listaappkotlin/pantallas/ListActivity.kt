@@ -1,6 +1,8 @@
 package com.example.listaappkotlin.pantallas
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -40,24 +42,28 @@ class ListActivity : AppCompatActivity() {
             insets
         }
 
-        binding.btnAdd.setOnClickListener { crearRutina() }
+        binding.btnAdd.setOnClickListener{
+            val intent = Intent(this, AddRutina::class.java)
+            startActivity(intent)
+        }
         initRecyclerView()
     }
 
-    private fun crearRutina(){
-        val rutina = Rutina("Full Body", "Trabajo completo", "https://images.unsplash.com/photo-1558611848-73f7eb4001a1", ejercicios = listOf(
-            Ejercicios("Sentadillas", series = 3, repeticiones = 12) ))
-        routinesMutableList.add(3, rutina)
-        adapter.notifyItemInserted(3)
-        llmanager.scrollToPositionWithOffset(3, 20)
+//    private fun crearRutina(){
+//        val rutina = Rutina("Full Body", "Trabajo completo", "https://images.unsplash.com/photo-1558611848-73f7eb4001a1", ejercicios = listOf(
+//            Ejercicios("Sentadillas", series = 3, repeticiones = 12) ))
+//        routinesMutableList.add(3, rutina)
+//        adapter.notifyItemInserted(3)
+//        llmanager.scrollToPositionWithOffset(3, 20)
+//
+//
+//        /*
+//        * En caso de querer que se añadan al final
+//        *         routinesMutableList.add(rutina)quito el index
+//        *          adapter.notifyItemInserted(routinesMutableList.size) (ya que se añadiria al final
+//        * */
+//    }
 
-
-        /*
-        * En caso de querer que se añadan al final
-        *         routinesMutableList.add(rutina)quito el index
-        *          adapter.notifyItemInserted(routinesMutableList.size) (ya que se añadiria al final
-        * */
-    }
     private fun initRecyclerView() {
         adapter= RutinaAdapter(
             routinesMutableList,

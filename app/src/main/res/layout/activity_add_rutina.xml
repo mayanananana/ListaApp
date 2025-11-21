@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Añadir Rutina"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <!-- Nombre de la rutina -->
+        <EditText
+            android:id="@+id/edtNombreRutina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre de la rutina"/>
+
+        <!-- Descripción de la rutina -->
+        <EditText
+            android:id="@+id/edtDescripcionRutina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descripción"/>
+
+        <!-- Botón para mostrar el formulario de ejercicio -->
+        <Button
+            android:id="@+id/btnMostrarFormulario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Añadir ejercicio"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Formulario de ejercicio (invisible al inicio) -->
+        <LinearLayout
+            android:id="@+id/formularioEjercicio"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="16dp">
+
+            <EditText
+                android:id="@+id/edtNombreEjercicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre del ejercicio" />
+
+            <EditText
+                android:id="@+id/edtSeries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Series (opcional)"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/edtRepeticiones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Repeticiones (opcional)"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/edtDuracion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Duración en segundos (opcional)"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/btnGuardarEjercicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guardar ejercicio"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Lista de ejercicios añadidos -->
+        <LinearLayout
+            android:id="@+id/listaEjercicios"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+        <!-- Botón para guardar la rutina completa -->
+        <Button
+            android:id="@+id/btnGuardarRutina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar Rutina"
+            android:layout_marginTop="24dp"/>
+    </LinearLayout>
+</ScrollView>
