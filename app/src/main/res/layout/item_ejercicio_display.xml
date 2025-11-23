@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/abc_list_selector_background_transition_holo_light">
+
+    <TextView
+        android:id="@+id/tvNombreEjercicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="Nombre del Ejercicio" />
+
+    <TextView
+        android:id="@+id/tvDetallesEjercicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="Series: 4, Reps: 12, Duración: 60s" />
+
+</LinearLayout>
