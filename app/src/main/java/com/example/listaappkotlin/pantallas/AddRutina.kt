@@ -3,6 +3,7 @@ package com.example.listaappkotlin.pantallas
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -30,8 +31,23 @@ class AddRutina : AppCompatActivity() {
             insets
         }
 
+        setupToolbar()
         setupRecyclerView()
         setupButtons()
+    }
+
+    private fun setupToolbar() {
+        setSupportActionBar(binding.toolbarAddRutina)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Añadir Nueva Rutina"
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            onBackPressedDispatcher.onBackPressed()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun setupRecyclerView() {
@@ -93,12 +109,12 @@ class AddRutina : AppCompatActivity() {
         }
         
         val descripcion = binding.edtDescripcionRutina.text.toString().trim()
-        val photoUrl = binding.edtPhotoUrl.text.toString().trim()
+        val photoUrl = "https://upload.wikimedia.org/wikipedia/commons/4/4c/Fitness.svg"
 
         val rutinaCompleta = Rutina(
             nombreRutina = nombreRutina,
             descripcionRutina = descripcion,
-            photo = photoUrl.ifEmpty { "https://via.placeholder.com/150" }, // Default image
+            photo = photoUrl,
             ejercicios = listaDeEjercicios
         )
 

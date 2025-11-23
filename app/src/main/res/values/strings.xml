@@ -11,4 +11,8 @@
     <string name="ejercicios">Ejercicios:</string>
     <string name="addEjercicio">Añadir ejercicio</string>
     <string name="saveRutina">Guardar rutina</string>
+    <string name="create_rutine">Crear Nueva Rutina</string>
+    <string name="add_ejercicio">Añadir Ejercicio</string>
+    <string name="add">Añadir</string>
+    <string name="save_rutina">Guardar Rutina Completa</string>
 </resources>
