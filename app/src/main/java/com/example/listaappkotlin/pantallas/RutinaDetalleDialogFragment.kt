@@ -32,11 +32,18 @@ class RutinaDetalleDialogFragment : DialogFragment() {
         return binding.root
     }
 
+    override fun onStart() {
+        super.onStart()
+        dialog?.window?.apply {
+            val width = (resources.displayMetrics.widthPixels * 0.90).toInt()
+            setLayout(width, ViewGroup.LayoutParams.WRAP_CONTENT)
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.tvRutinaTitulo.text = rutina.nombreRutina
-        binding.tvRutinaDescripcion.text = rutina.descripcionRutina
 
         val ejercicioAdapter = EjercicioDetalleAdapter(rutina.ejercicios)
         binding.rvEjerciciosDialog.adapter = ejercicioAdapter

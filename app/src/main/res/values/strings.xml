@@ -15,4 +15,5 @@
     <string name="add_ejercicio">Añadir Ejercicio</string>
     <string name="add">Añadir</string>
     <string name="save_rutina">Guardar Rutina Completa</string>
+    <string name="autor">Mariana Gómez</string>
 </resources>

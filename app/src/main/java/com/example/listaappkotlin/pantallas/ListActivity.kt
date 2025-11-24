@@ -14,6 +14,7 @@ import com.example.listaappkotlin.adapter.RutinaAdapter
 import com.example.listaappkotlin.data.RoutinesProvider
 import com.example.listaappkotlin.data.models.Rutina
 import com.example.listaappkotlin.databinding.ActivityListBinding
+import com.google.android.material.snackbar.Snackbar
 
 class ListActivity : AppCompatActivity() {
 
@@ -59,10 +60,19 @@ class ListActivity : AppCompatActivity() {
     }
 
     private fun crearRutina(rutina: Rutina) {
+        val position = routinesMutableList.size
         routinesMutableList.add(rutina)
-        adapter.notifyItemInserted(routinesMutableList.size - 1)
-        llmanager.scrollToPositionWithOffset(routinesMutableList.size - 1, 20)
+        adapter.notifyItemInserted(position)
+        llmanager.scrollToPositionWithOffset(position, 20)
         checkEmptyView()
+
+        Snackbar.make(binding.root, "Rutina añadida", Snackbar.LENGTH_LONG)
+            .setAction("Deshacer") {
+                routinesMutableList.removeAt(position)
+                adapter.notifyItemRemoved(position)
+                checkEmptyView()
+            }
+            .show()
     }
 
     private fun initRecyclerView() {

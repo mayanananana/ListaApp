@@ -10,23 +10,25 @@
 
     <ImageView
         android:id="@+id/imageViewHeader"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="32dp"
-        android:src="@mipmap/ic_launcher_round"
+        android:layout_width="411dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="72dp"
+        android:contentDescription="Header Image"
+        android:src="@drawable/icon"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="Header Image" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="36dp"
         android:text="Rutinas de ejercicio"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="28sp"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,36 +39,40 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:text="¡Bienvenido a la aplicación de rutinas de ejercicio! Aquí podrás crear y gestionar tus entrenamientos personalizados."
-        android:textColor="#FFFFFF"
         android:padding="12dp"
+        android:text="¡Bienvenido a la aplicación de rutinas de ejercicio! Aquí podrás crear y gestionar tus entrenamientos personalizados."
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/textTitle" />
 
     <Button
         android:id="@+id/buttonStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="135dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="#444444"
         android:text="Iniciar"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#444444"
-        app:layout_constraintTop_toBottomOf="@id/editTextDescription"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="80dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
 
-    <Button
-        android:id="@+id/buttonTest"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#666666"
-        app:layout_constraintTop_toBottomOf="@id/buttonStart"
-        app:layout_constraintStart_toStartOf="@id/buttonStart"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="72dp"
+        android:text="@string/autor"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonStart" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,8 +31,6 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        val buttonTest= findViewById<Button>(R.id.buttonTest)
-        buttonTest.setOnClickListener {  }
 
     }
 }
