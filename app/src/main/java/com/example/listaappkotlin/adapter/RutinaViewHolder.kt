@@ -20,13 +20,7 @@ class RutinaViewHolder (view: View) : RecyclerView.ViewHolder(view){
         binding.descripcionTV.text= rutinaModel.descripcionRutina;
         Glide.with(binding.itemIcon.context).load(rutinaModel.photo).into(binding.itemIcon)
 
-        binding.titleTV.setOnClickListener {
-            AlertDialog.Builder(binding.root.context)
-                .setTitle(binding.titleTV.text)
-                .setMessage(binding.descripcionTV.text)
-                .setPositiveButton("OK", null)
-                .show()
-        }
+        itemView.setOnClickListener { onClickListener(rutinaModel) }
 
         binding.buttonDelete.setOnClickListener { onClickDelete(adapterPosition) }
     }

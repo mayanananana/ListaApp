@@ -83,7 +83,8 @@ class ListActivity : AppCompatActivity() {
     }
 
     private fun onItemSelected(rutina: Rutina) {
-        Toast.makeText(this, rutina.nombreRutina, Toast.LENGTH_SHORT).show()
+        val dialog = RutinaDetalleDialogFragment.newInstance(rutina)
+        dialog.show(supportFragmentManager, "RutinaDetalleDialog")
     }
 
     private fun checkEmptyView() {
