@@ -18,7 +18,8 @@
             android:exported="false" />
         <activity
             android:name=".pantallas.ListActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".pantallas.MainActivity"/>
         <activity
             android:name=".pantallas.MainActivity"
             android:exported="true">

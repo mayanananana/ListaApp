@@ -29,6 +29,10 @@ class ListActivity : AppCompatActivity() {
         binding = ActivityListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Setup Toolbar
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -58,6 +62,7 @@ class ListActivity : AppCompatActivity() {
         routinesMutableList.add(rutina)
         adapter.notifyItemInserted(routinesMutableList.size - 1)
         llmanager.scrollToPositionWithOffset(routinesMutableList.size - 1, 20)
+        checkEmptyView()
     }
 
     private fun initRecyclerView() {
@@ -68,14 +73,36 @@ class ListActivity : AppCompatActivity() {
         )
         binding.recyclerworkout.layoutManager = llmanager
         binding.recyclerworkout.adapter = adapter
+        checkEmptyView()
     }
 
     private fun onDeletedItem(position: Int) {
         routinesMutableList.removeAt(position)
         adapter.notifyItemRemoved(position)
+        checkEmptyView()
     }
 
     private fun onItemSelected(rutina: Rutina) {
         Toast.makeText(this, rutina.nombreRutina, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun checkEmptyView() {
+        if (routinesMutableList.isEmpty()) {
+            binding.emptyView.visibility = android.view.View.VISIBLE
+            binding.recyclerworkout.visibility = android.view.View.GONE
+        } else {
+            binding.emptyView.visibility = android.view.View.GONE
+            binding.recyclerworkout.visibility = android.view.View.VISIBLE
+        }
+    }
+
+    override fun onOptionsItemSelected(item: android.view.MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
