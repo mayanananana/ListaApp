@@ -3,8 +3,17 @@ package com.example.listaappkotlin.data
 import com.example.listaappkotlin.data.models.Ejercicios
 import com.example.listaappkotlin.data.models.Rutina
 
+/**
+ * Clase que provee una lista de rutinas predefinidas.
+ * Utiliza un objeto compañero para que la lista de rutinas sea accesible de forma estática,
+ * sirviendo como una fuente de datos de ejemplo para la aplicación.
+ */
 class RoutinesProvider {
-    companion object{
+    companion object {
+        /**
+         * Lista de rutinas de ejemplo.
+         * Cada rutina tiene un nombre, una descripción, una URL de imagen y una lista de ejercicios.
+         */
         val routines = listOf(
             Rutina(
                 "Full Body Principiantes",
@@ -117,6 +126,5 @@ class RoutinesProvider {
                 )
             )
         )
-
     }
 }
